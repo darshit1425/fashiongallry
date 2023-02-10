@@ -10,20 +10,7 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-  List name = [
-    "SHOES",
-    "T-SHIRTS",
-    "TOP",
-    "BLAZER",
-    "HODIE",
-    "JEANS",
-    "EAR-RINGS",
-    "JACKET",
-    "SHRUG",
-    "HOT WEAR",
-    "SHORTS",
-    "SHIRTS",
-  ];
+
   List rating = [
     "5.0",
     "4.9",
@@ -38,6 +25,7 @@ class _Page1State extends State<Page1> {
     "3.7",
     "4.2",
   ];
+
   List images = [
     "assets/images/shoes.png",
     "assets/images/t-shirts.jpg",
@@ -52,7 +40,23 @@ class _Page1State extends State<Page1> {
     "assets/images/shorts.jpg",
     "assets/images/shirt.jpg",
   ];
-  List price = [
+  List name = [
+    "SHOES",
+    "T-SHIRTS",
+    "TOP",
+    "BLAZER",
+    "HODIE",
+    "JEANS",
+    "EAR-RINGS",
+    "JACKET",
+    "SHRUG",
+    "HOT WEAR",
+    "SHORTS",
+    "SHIRTS",
+  ];
+
+
+  List priceice = [
     "\$30.33",
     "\$52.00",
     "\$40.00",
@@ -70,43 +74,45 @@ class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              "SHOPPING GALLERY UI",
-              style: TextStyle(color: Colors.white),
-            ),
-            backgroundColor: Color(0xff5780B9),
-            centerTitle: true,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "SHOPPING GALLERY UI",
+            style: TextStyle(color: Colors.white),
           ),
-          body: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.blue,
-                    Colors.indigo.shade400,
-                    Colors.purple,
-                  ],
-                ),
-              ),
-              child: GridView.builder(
-                itemCount: name.length,
-                padding: EdgeInsets.all(10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                ),
-                physics: BouncingScrollPhysics(),
-                itemBuilder: (context, index) => FashionWidget(
-                    name[index], price[index], images[index], rating[index]),
-              )),
-        ));
+          backgroundColor: Color(0xff5780B9),
+          centerTitle: true,
+        ),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topriceight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Colors.blue,
+                Colors.indigo.shade400,
+                Colors.purple,
+              ],
+            ),
+          ),
+          child: GridView.builder(
+            itemCount: name.length,
+            padding: EdgeInsets.all(10),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
+            physics: BouncingScrollPhysics(),
+            itemBuilder: (context, index) =>
+                FashionWidget(
+                    name[index], priceice[index], images[index], rating[index]),
+          ),),
+      ),);
   }
 
-  Widget FashionWidget(String? n1, String? pr, String? img, String? rate) {
+  Widget FashionWidget(String? name, String? priceice, String? image,
+      String? ratings) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -116,7 +122,7 @@ class _Page1State extends State<Page1> {
         alignment: Alignment.center,
         children: [
           Image.asset(
-            "$img",
+            "$image",
             fit: BoxFit.cover,
           ),
           Align(
@@ -136,7 +142,7 @@ class _Page1State extends State<Page1> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "${rate}",
+                    "${ratings}",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 10,
@@ -159,7 +165,6 @@ class _Page1State extends State<Page1> {
             child: Container(
               height: 40,
               width: double.infinity,
-              // margin: EdgeInsets.only(left: 10,right: 10),
               decoration: BoxDecoration(
                   color: Colors.black54,
                   borderRadius: BorderRadius.horizontal(
@@ -170,11 +175,11 @@ class _Page1State extends State<Page1> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${n1}",
+                      "${name}",
                       style: TextStyle(color: Colors.white, letterSpacing: 1),
                     ),
                     Text(
-                      "${pr}",
+                      "${price}",
                       style: TextStyle(color: Colors.white, letterSpacing: 1),
                     ),
                   ],

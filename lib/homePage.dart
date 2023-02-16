@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class Page1 extends StatefulWidget {
@@ -10,22 +8,20 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-
-  List rating = [
+  List Reviews = [
     "5.0",
+    "4.1",
     "4.9",
-    "3.2",
-    "4.5",
-    "3.7",
     "4.2",
-    "5.0",
-    "4.9",
-    "3.2",
+    "4.7",
     "4.5",
-    "3.7",
+    "4.8",
+    "4.8",
     "4.2",
+    "4.1",
+    "4.3",
+    "4.0",
   ];
-
   List images = [
     "assets/images/shoes.png",
     "assets/images/t-shirts.jpg",
@@ -33,14 +29,14 @@ class _Page1State extends State<Page1> {
     "assets/images/blazer.jpg",
     "assets/images/hodie.jpg",
     "assets/images/jeans.jpg",
-    "assets/images/ear_ring.jpg",
+    "assets/images/shorts.jpg",
     "assets/images/jacket.jpg",
     "assets/images/shrug.jpg",
     "assets/images/hot_wear.jpg",
-    "assets/images/shorts.jpg",
+    "assets/images/ear_ring.jpg",
     "assets/images/shirt.jpg",
   ];
-  List name = [
+  List feshionoductsName = [
     "SHOES",
     "T-SHIRTS",
     "TOP",
@@ -55,8 +51,7 @@ class _Page1State extends State<Page1> {
     "SHIRTS",
   ];
 
-
-  List priceice = [
+  List feshionice = [
     "\$30.33",
     "\$52.00",
     "\$40.00",
@@ -78,25 +73,25 @@ class _Page1State extends State<Page1> {
         appBar: AppBar(
           title: Text(
             "SHOPPING GALLERY UI",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(fontSize: 22, color: Color(0xffF9F9F9)),
           ),
-          backgroundColor: Color(0xff5780B9),
+          backgroundColor: Color(0xff5780b9),
           centerTitle: true,
         ),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topriceight,
+              begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Colors.blue,
-                Colors.indigo.shade400,
-                Colors.purple,
+                Color(0xffF6F6F6),
+                Color(0xff937bd6),
+                Color(0xffb935cd),
               ],
             ),
           ),
           child: GridView.builder(
-            itemCount: name.length,
+            itemCount: feshionoductsName.length,
             padding: EdgeInsets.all(10),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -104,15 +99,19 @@ class _Page1State extends State<Page1> {
               crossAxisSpacing: 10,
             ),
             physics: BouncingScrollPhysics(),
-            itemBuilder: (context, index) =>
-                FashionWidget(
-                    name[index], priceice[index], images[index], rating[index]),
-          ),),
-      ),);
+            itemBuilder: (context, index) => FashionWidget(
+                feshionoductsName[index],
+                feshionice[index],
+                images[index],
+                Reviews[index]),
+          ),
+        ),
+      ),
+    );
   }
 
-  Widget FashionWidget(String? name, String? priceice, String? image,
-      String? ratings) {
+  Widget FashionWidget(
+      String? feshion, String? fes, String? image, String? rate) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -129,7 +128,7 @@ class _Page1State extends State<Page1> {
             alignment: Alignment.topLeft,
             child: Container(
               height: 40,
-              width: 40,
+              width: 50,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.green,
@@ -142,7 +141,7 @@ class _Page1State extends State<Page1> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "${ratings}",
+                    "${rate}",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 10,
@@ -154,7 +153,7 @@ class _Page1State extends State<Page1> {
                   Icon(
                     Icons.star,
                     color: Colors.white,
-                    size: 8,
+                    size: 10,
                   )
                 ],
               ),
@@ -163,10 +162,10 @@ class _Page1State extends State<Page1> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 40,
+              height: 42,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.black54,
+                  color: Color(0xff7b7b7b),
                   borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(10), left: Radius.circular(10))),
               child: Padding(
@@ -175,11 +174,11 @@ class _Page1State extends State<Page1> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${name}",
+                      "${fes}",
                       style: TextStyle(color: Colors.white, letterSpacing: 1),
                     ),
                     Text(
-                      "${price}",
+                      "${fes}",
                       style: TextStyle(color: Colors.white, letterSpacing: 1),
                     ),
                   ],

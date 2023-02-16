@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
 
-import 'New page.dart';
+import 'homePage.dart';
 
-
-
-void main(){
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    routes: {
-      '/':(context) => Page1(),
-    },
-  ));
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        '/': (context) => Page1(),
+      },
+    ),
+  );
 }

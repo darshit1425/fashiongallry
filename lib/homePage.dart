@@ -92,14 +92,16 @@ class _Page1State extends State<Page1> {
           ),
           child: GridView.builder(
             itemCount: feshionoductsName.length,
-            padding: EdgeInsets.all(10),
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.all(10.00),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
+              crossAxisCount: 2,
+            
             ),
-            physics: BouncingScrollPhysics(),
-            itemBuilder: (context, index) => FashionWidget(
+            
+            itemBuilder: (context, index) => Product(
                 feshionoductsName[index],
                 feshionice[index],
                 images[index],
@@ -110,12 +112,12 @@ class _Page1State extends State<Page1> {
     );
   }
 
-  Widget FashionWidget(
-      String? name, String? fes, String? image, String? review) {
+  Widget Product(
+      String? fes, String? name, String? review, String? image, ) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.00),
       ),
       child: Stack(
         alignment: Alignment.center,
@@ -133,8 +135,8 @@ class _Page1State extends State<Page1> {
               decoration: BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
+                  topLeft: Radius.circular(10.00),
+                  bottomRight: Radius.circular(10.00),
                 ),
               ),
               child: Row(
@@ -144,16 +146,16 @@ class _Page1State extends State<Page1> {
                     "${review}",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: 10.00,
                     ),
                   ),
                   SizedBox(
-                    width: 2,
+                    width: 2.00,
                   ),
                   Icon(
                     Icons.star,
                     color: Colors.white,
-                    size: 10,
+                    size: 10.00,
                   )
                 ],
               ),
@@ -167,22 +169,24 @@ class _Page1State extends State<Page1> {
               decoration: BoxDecoration(
                 color: Color(0xff7b7b7b),
                 borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(10),
-                  left: Radius.circular(10),
+                  right: Radius.circular(10.00),
+                  left: Radius.circular(10.00),
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10.00),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "${name}",
-                      style: TextStyle(color: Colors.white, letterSpacing: 1),
+                      style:
+                          TextStyle(color: Colors.white, letterSpacing: 1.00),
                     ),
                     Text(
                       "${fes}",
-                      style: TextStyle(color: Colors.white, letterSpacing: 1),
+                      style:
+                          TextStyle(color: Colors.white, letterSpacing: 1.00),
                     ),
                   ],
                 ),

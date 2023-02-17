@@ -111,7 +111,7 @@ class _Page1State extends State<Page1> {
   }
 
   Widget FashionWidget(
-      String? feshion, String? fes, String? image, String? rate) {
+      String? name, String? fes, String? image, String? review) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -141,7 +141,7 @@ class _Page1State extends State<Page1> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "${rate}",
+                    "${review}",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 10,
@@ -165,16 +165,19 @@ class _Page1State extends State<Page1> {
               height: 42,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Color(0xff7b7b7b),
-                  borderRadius: BorderRadius.horizontal(
-                      right: Radius.circular(10), left: Radius.circular(10))),
+                color: Color(0xff7b7b7b),
+                borderRadius: BorderRadius.horizontal(
+                  right: Radius.circular(10),
+                  left: Radius.circular(10),
+                ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${fes}",
+                      "${name}",
                       style: TextStyle(color: Colors.white, letterSpacing: 1),
                     ),
                     Text(
